@@ -1,0 +1,24 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-07-09/server.schema.json",
+  "name": "io.github.erliona/tunova",
+  "description": "Generate Suno AI music (v4.5/v5/v5.5) from any MCP client. Async: generate_song returns a job_id, wait_for_song polls to completion. Billed only on success.",
+  "version": "0.1.0",
+  "repository": {
+    "url": "https://github.com/erliona/tunova-sdk",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://api.tunova.ai/mcp",
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "description": "Your Tunova API key (sk_live_…). Get one free at https://tunova.ai",
+          "isRequired": true,
+          "isSecret": true
+        }
+      ]
+    }
+  ]
+}
