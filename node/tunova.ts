@@ -8,7 +8,7 @@
  *
  *   import { Tunova } from "./tunova";
  *   const t = new Tunova(process.env.TUNOVA_API_KEY!);
- *   const job = await t.generate("lofi hip hop to code to", { model: "v5" });
+ *   const job = await t.generate("lofi hip hop to code to", { model: "v5.5" });
  *   if (job.status === "complete") console.log(job.clips[0]?.audio_url);
  *   else console.error("failed (auto-refunded):", job.error);
  */
@@ -48,7 +48,7 @@ export interface GenerateOptions {
   tags?: string;
   title?: string;
   make_instrumental?: boolean;
-  /** e.g. "v4.5" | "v5" | "v5.5" (default: account default). */
+  /** e.g. "v5.5" (default: account default). */
   model?: string;
   /** Public https URL for an HMAC-signed completion webhook. */
   callback_url?: string;
