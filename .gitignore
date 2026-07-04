@@ -3,3 +3,8 @@ __pycache__/
 node_modules/
 .env
 .DS_Store
+
+# build artifacts (npm dist + python build/sdist/wheel)
+dist/
+build/
+*.egg-info/

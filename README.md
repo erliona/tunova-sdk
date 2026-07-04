@@ -1,7 +1,7 @@
 # Tunova SDK
 
 Tiny, **zero-dependency** clients + MCP manifest for the [Tunova](https://tunova.ai) music API —
-generate music with Suno models (v4.5 / v5 / v5.5) over a simple REST or MCP interface.
+generate music with Suno (v5.5) over a simple REST or MCP interface.
 Generation is async and **billed only on success**: a failed render refunds itself.
 
 - **Python** → [`python/tunova.py`](python/tunova.py) — stdlib only, Python 3.8+.
@@ -16,21 +16,31 @@ Get a key (50 free tokens, no card) at **<https://tunova.ai>**. Full reference:
 
 ## Python
 
+```bash
+pip install tunova
+```
+
 ```python
 from tunova import Tunova
 
 t = Tunova("sk_live_…")
-job = t.generate("warm lo-fi piano to study to", model="v5")
+job = t.generate("warm lo-fi piano to study to", model="v5.5")
 print(job["clips"][0]["audio_url"] if job["status"] == "complete" else job["error"])
 ```
 
+Prefer no install? `python/tunova.py` is stdlib-only — vendor the single file and `import` it.
+
 ## Node / TypeScript
 
+```bash
+npm i tunova
+```
+
 ```ts
-import { Tunova } from "./tunova";
+import { Tunova } from "tunova";
 
 const t = new Tunova(process.env.TUNOVA_API_KEY!);
-const job = await t.generate("warm lo-fi piano to study to", { model: "v5" });
+const job = await t.generate("warm lo-fi piano to study to", { model: "v5.5" });
 console.log(job.status === "complete" ? job.clips[0]?.audio_url : job.error);
 ```
 

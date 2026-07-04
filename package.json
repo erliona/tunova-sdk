@@ -1,0 +1,31 @@
+{
+  "name": "tunova",
+  "version": "0.1.0",
+  "description": "Tiny zero-dependency TypeScript/Node client for the Tunova Suno music API (v5.5) — async, billed only on success.",
+  "type": "module",
+  "main": "./dist/tunova.js",
+  "module": "./dist/tunova.js",
+  "types": "./dist/tunova.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/tunova.d.ts",
+      "import": "./dist/tunova.js"
+    }
+  },
+  "files": ["dist/tunova.js", "dist/tunova.d.ts", "README.md", "LICENSE"],
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": ["suno", "suno-api", "music", "ai", "mcp", "api-client"],
+  "author": "Tunova",
+  "license": "MIT",
+  "homepage": "https://tunova.ai",
+  "repository": { "type": "git", "url": "git+https://github.com/erliona/tunova-sdk.git" },
+  "bugs": { "url": "https://github.com/erliona/tunova-sdk/issues" },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.6.0"
+  }
+}

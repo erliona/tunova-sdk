@@ -7,7 +7,7 @@ failed renders are auto-refunded.
     from tunova import Tunova
 
     t = Tunova("sk_live_…")
-    job = t.generate("lofi hip hop to code to", model="v5")
+    job = t.generate("lofi hip hop to code to", model="v5.5")
     if job["status"] == "complete":
         print(job["clips"][0]["audio_url"])
     else:
@@ -94,7 +94,7 @@ class Tunova:
         """Submit a generation job (returns immediately). Response: ``{job_id, status, status_url}``.
 
         ``custom=True`` switches to lyrics mode (``prompt`` = your lyrics; add ``tags``/``title``).
-        ``model`` is e.g. "v4.5"/"v5"/"v5.5". Pass ``callback_url`` for an HMAC-signed webhook on
+        ``model`` is e.g. "v5.5". Pass ``callback_url`` for an HMAC-signed webhook on
         completion, or poll ``get_job``. ``idempotency_key`` makes a retried submit return the same
         job (never double-charged)."""
         body: Dict[str, Any] = {"prompt": prompt}
